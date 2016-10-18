@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Photo editor</title>
+	<link rel="stylesheet" href="vendor/jquery-ui.min.css" media="all">
+	<link rel="stylesheet" href="vendor/bootstrap.min.css" media="all">
+	<link rel="stylesheet" href="editor.css" media="all">
+	<script src="vendor/jquery-3.1.1.min.js"></script>
+	<script src="vendor/jquery-ui.min.js"></script>
+	<script src="vendor/bootstrap.min.js"></script>
+	
+</head>
+<body>
+<div class="container">
+	<div id="header"><h1>UIImage</h1></div>
+</div>
+<!-- .container -->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+		<!-- 画像表示 -->
+			<p>
+				画像サイズが大きいとエフェクト処理に時間がかかります。
+				画像サイズは640(横) x 480(縦)を目安にして下さい。
+			</p>
+			<div class="uploader-wrapper">
+				<input id="uploader" name="uploader" type="file" value="Upload file">
+			</div>
+			
+			<div id="canvas-wrapper" class="canvas-wrapper">
+				<canvas id="canvas"></canvas>
+				<div id="trim-selection"></div>
+			</div>
+			<div class="original-wrapper col-md-8">
+				<button id="original" class="btn btn-info">元画像表示</button>
+				横 <input type="text" id="original-width" size="5" disabled="disabled">
+				縦 <input type="text" id="original-height" size="5" disabled="disabled">
+			</div>
+			<div class="save-wrapper text-lg-right col-md-4">
+				<button id="save" class="btn btn-success">画像保存</button>
+			</div>
+		</div>
+		<!-- .col -->
+		<div class="col-md-4">
+			<!-- 画像加工ダイアログ -->
+			<div id="edit-dialog" title="画像加工ダイアログ">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#resize-process" role="tab">リサイズ</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#rotate-process" role="tab">回転</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#trimming-process" role="tab">トリミング</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#filter-process" role="tab">エフェクト</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#lettering-process" role="tab">テキスト</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div id="resize-process" class="tab-pane active" role="tabpanel">
+						<div class="process-wrapper">
+							<h4>リサイズ</h4>
+							<div>
+								<h5>自由変形</h5>
+								横: <input id="width" class="num-input" type="text" size="5">
+								縦: <input id="height" class="num-input" type="text" size="5">
+							</div>
+							<div>
+								縦横固 <input id="ratio" type="checkbox" name="ratio">
+							</div>
+							<div>
+								<button id="resize" class="btn btn-secondary">リサイズ</button>
+							</div>
+						</div>
+					</div>
+					<div id="rotate-process" class="tab-pane" role="tabpanel">
+						<div class="process-wrapper">
+							<h4>回転</h4>
+							<div>
+								<button id="rotate-right" class="btn btn-secondary">右90度回転</button>
+								<button id="rotate-left" class="btn btn-secondary">左90度回転</button>
+							</div>
+						</div>
+					</div>
+					<div id="trimming-process" class="tab-pane" role="tabpanel">
+						<div class="process-wrapper">
+							<h4>トリミング</h4>
+							トリムエリア<br>
+							横: <input id="trim-width" name="trim-width" class="num-input" type="text" size="4"> px
+							縦: <input id="trim-height" name="trim-height" class="num-input" type="text" size="4"> px<br>
+							トリムエリアは横、縦を指定して大きさを変更できます。<br>
+							またマウス操作でもトリムエリアを変更できます。<br>
+							トリムエリアはドラッグすることができます。<br>
+							<button id="open-trim-selection" class="btn btn-secondary">トリムエリア表示</button>
+							<button id="close-trim-selection" class="btn btn-secondary">トリムエリア削除</button>
+							<button id="trimming" class="btn btn-secondary">トリミング</button>
+						</div>
+					</div>
+					<div id="filter-process" class="tab-pane" role="tabpanel">
+						<div class="process-wrapper">
+							<h4>エフェクト</h4>
+							<div class="tuple">
+								<button id="reverse" class="filtering btn btn-secondary">reverse</button>
+								<button id="mono" class="filtering btn btn-secondary">monochrome</button>
+							</div>
+							<div class="tuple">
+								<button id="grayscale" class="filtering btn btn-secondary">grayscale</button>
+								<button id="sepia" class="filtering btn btn-secondary">sepia(セピア)</button>
+							</div>
+							<div class="tuple">
+								<button id="bright" class="filtering btn btn-secondary">明るく</button>
+								<button id="red" class="filtering btn btn-secondary">赤色を濃く</button>
+								<button id="green" class="filtering btn btn-secondary">緑色を濃く</button>
+								<button id="blue" class="filtering btn btn-secondary">青色を濃く</button>
+							</div>
+							<div class="tuple">
+								<button id="smooth" class="filtering btn btn-secondary">smooth(単純平均)</button>
+								<button id="sharpen" class="filtering btn btn-secondary">sharpen(先鋭化)</button>
+								<button id="sharpen2" class="filtering btn btn-secondary">sharpen 2(先鋭化2)</button>
+							</div>
+							<div class="tuple">
+								<button id="differentialH" class="filtering btn btn-secondary">edge detection(横方向エッジ検出)
+								</button>
+								<button id="differentialV" class="filtering btn btn-secondary">edge detection
+									vertical(縦方向エッジ検出)
+								</button>
+							</div>
+							<div class="tuple">
+								<button id="prewitt" class="filtering btn btn-secondary">Prewitt</button>
+								<button id="sobel" class="filtering btn btn-secondary">Sobel</button>
+							</div>
+						</div>
+					</div>
+					<div id="lettering-process" class="tab-pane" role="tabpanel">
+						<div class="process-wrapper">
+							文字 <input type="text" class="lettering-input"><br>
+							文字サイズ <input class="lettering-size" type="text" placeholder="16" size="3"> px<br>
+							文字位置<br>
+							&emsp;左位置 <input class="lettering-left" type="text" placeholder="10" size="3"> px<br>
+							&emsp;上位置 <input class="lettering-top" type="text" placeholder="10" size="3"> px<br>
+							文字色 <input class="lettering-color color" value="000000"><br>
+							<button class="lettering btn btn-secondary">文字入れ</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .edit-dialog -->
+			<!-- 画像保存ダイアログ -->
+			<div id="save-dialog" title="画像保存"></div>
+		</div>
+		<!-- .col -->
+	</div>
+	<!-- .row -->
+</div>
+<!-- .container -->
+
+<script src="../dist/ui-image.js"></script>
+</body>
+</html>

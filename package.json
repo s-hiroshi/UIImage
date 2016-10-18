@@ -1,0 +1,27 @@
+{
+  "name": "ui-image",
+  "version": "0.1.0",
+  "description": "This program provides JavaScript image processing.",
+  "main": "main.js",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "watchify -v -t babelify src/main.js -o dist/ui-image.js",
+    "min": "uglifyjs ./dist/ui-image.js -o ./dist/ui-image.min.js",
+    "docs": "yuidoc -o ./docs ./src"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Hiroshi Sawai",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "watchify": "^3.7.0"
+  }
+}

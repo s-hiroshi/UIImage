@@ -1,0 +1,1734 @@
+{
+    "project": {},
+    "files": {
+        "src/data/original.js": {
+            "name": "src/data/original.js",
+            "modules": {
+                "Data": 1
+            },
+            "classes": {
+                "original": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/filter/boundary.js": {
+            "name": "src/filter/boundary.js",
+            "modules": {
+                "Filter": 1
+            },
+            "classes": {
+                "boundary": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/filter/filters.js": {
+            "name": "src/filter/filters.js",
+            "modules": {},
+            "classes": {
+                "filters": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/filter/linearfilter.js": {
+            "name": "src/filter/linearfilter.js",
+            "modules": {},
+            "classes": {
+                "linearFilter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/filter/processing.js": {
+            "name": "src/filter/processing.js",
+            "modules": {},
+            "classes": {
+                "processing": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/filter/spatialfilter.js": {
+            "name": "src/filter/spatialfilter.js",
+            "modules": {},
+            "classes": {
+                "spatialFilter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/lettering/lettering.js": {
+            "name": "src/lettering/lettering.js",
+            "modules": {
+                "Lettering": 1
+            },
+            "classes": {
+                "lettering": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/transform/resize.js": {
+            "name": "src/transform/resize.js",
+            "modules": {
+                "Transform": 1
+            },
+            "classes": {
+                "resize": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/transform/rotate.js": {
+            "name": "src/transform/rotate.js",
+            "modules": {},
+            "classes": {
+                "rotate": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/trim/trim.js": {
+            "name": "src/trim/trim.js",
+            "modules": {
+                "Trim": 1
+            },
+            "classes": {
+                "trim": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uploader/uploader.js": {
+            "name": "src/uploader/uploader.js",
+            "modules": {
+                "Uploader": 1
+            },
+            "classes": {
+                "uploader": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/validation/validation.js": {
+            "name": "src/validation/validation.js",
+            "modules": {
+                "Validation": 1
+            },
+            "classes": {
+                "validation": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "Data": {
+            "name": "Data",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "original": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/data/original.js",
+            "line": 6,
+            "description": "画像データ"
+        },
+        "Filter": {
+            "name": "Filter",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "boundary": 1,
+                "filters": 1,
+                "linearFilter": 1,
+                "processing": 1,
+                "spatialFilter": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/filter/spatialfilter.js",
+            "line": 6,
+            "description": "フィルター"
+        },
+        "Lettering": {
+            "name": "Lettering",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "lettering": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/lettering/lettering.js",
+            "line": 1,
+            "description": "文字入力"
+        },
+        "Transform": {
+            "name": "Transform",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "resize": 1,
+                "rotate": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/transform/rotate.js",
+            "line": 6,
+            "description": "アフィン変換"
+        },
+        "Trim": {
+            "name": "Trim",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "trim": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/trim/trim.js",
+            "line": 1,
+            "description": "トリミング"
+        },
+        "Uploader": {
+            "name": "Uploader",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "uploader": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/uploader/uploader.js",
+            "line": 1,
+            "description": "アップロード処理"
+        },
+        "Validation": {
+            "name": "Validation",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "validation": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "src/validation/validation.js",
+            "line": 1,
+            "description": "入力検証"
+        }
+    },
+    "classes": {
+        "original": {
+            "name": "original",
+            "shortname": "original",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Data",
+            "namespace": "",
+            "file": "src/data/original.js",
+            "line": 6,
+            "description": "オリジナル画像管理"
+        },
+        "boundary": {
+            "name": "boundary",
+            "shortname": "boundary",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Filter",
+            "namespace": "",
+            "file": "src/filter/boundary.js",
+            "line": 6,
+            "description": "空間フィルター境界処理"
+        },
+        "filters": {
+            "name": "filters",
+            "shortname": "filters",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Filter",
+            "namespace": "",
+            "file": "src/filter/filters.js",
+            "line": 6,
+            "description": "フィルター"
+        },
+        "linearFilter": {
+            "name": "linearFilter",
+            "shortname": "linearFilter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Filter",
+            "namespace": "",
+            "file": "src/filter/linearfilter.js",
+            "line": 6,
+            "description": "線形フィルター"
+        },
+        "processing": {
+            "name": "processing",
+            "shortname": "processing",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Filter",
+            "namespace": "",
+            "file": "src/filter/processing.js",
+            "line": 6,
+            "description": "画像の各ピクセルへフィルターを提要"
+        },
+        "spatialFilter": {
+            "name": "spatialFilter",
+            "shortname": "spatialFilter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Filter",
+            "namespace": "",
+            "file": "src/filter/spatialfilter.js",
+            "line": 6,
+            "description": "空間フィルター"
+        },
+        "lettering": {
+            "name": "lettering",
+            "shortname": "lettering",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Lettering",
+            "namespace": "",
+            "file": "src/lettering/lettering.js",
+            "line": 1,
+            "description": "文字入力"
+        },
+        "resize": {
+            "name": "resize",
+            "shortname": "resize",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Transform",
+            "namespace": "",
+            "file": "src/transform/resize.js",
+            "line": 5,
+            "description": "アフィン変換 リサイズ"
+        },
+        "rotate": {
+            "name": "rotate",
+            "shortname": "rotate",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Transform",
+            "namespace": "",
+            "file": "src/transform/rotate.js",
+            "line": 6,
+            "description": "アフィン変換 回転"
+        },
+        "trim": {
+            "name": "trim",
+            "shortname": "trim",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Trim",
+            "namespace": "",
+            "file": "src/trim/trim.js",
+            "line": 1,
+            "description": "トリミング"
+        },
+        "uploader": {
+            "name": "uploader",
+            "shortname": "uploader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Uploader",
+            "namespace": "",
+            "file": "src/uploader/uploader.js",
+            "line": 1,
+            "description": "アップロード処理"
+        },
+        "validation": {
+            "name": "validation",
+            "shortname": "validation",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Validation",
+            "namespace": "",
+            "file": "src/validation/validation.js",
+            "line": 1,
+            "description": "入力検証"
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "src/data/original.js",
+            "line": 12,
+            "description": "オリジナル画像のImageData",
+            "itemtype": "property",
+            "name": "originalData",
+            "access": "private",
+            "tagname": "",
+            "type": "{ImageData}",
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 21,
+            "description": "ImageData設定",
+            "itemtype": "method",
+            "name": "setOriginalData",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "imageData",
+                    "description": "オリジナル画像のImageDataです。",
+                    "type": "ImageData"
+                }
+            ],
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 32,
+            "description": "オリジナル画像幅表示要素",
+            "itemtype": "property",
+            "name": "setWidthElem",
+            "access": "private",
+            "tagname": "",
+            "type": "{jQuery}",
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 41,
+            "description": "オリジナル画像幅表示要素設定",
+            "itemtype": "method",
+            "name": "setWidthElem",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "jQueryオブジェクトです。",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 53,
+            "description": "オリジナル画像高さ表示要素",
+            "itemtype": "property",
+            "name": "setWidthElem",
+            "access": "private",
+            "tagname": "",
+            "type": "{jQuery}",
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 62,
+            "description": "オリジナル画像高さ表示要素設定",
+            "itemtype": "method",
+            "name": "setWidthElem",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "jQueryオブジェクトです。",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 73,
+            "description": "ImageData 取得",
+            "itemtype": "method",
+            "name": "getOriginalData",
+            "access": "public",
+            "tagname": "",
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 83,
+            "description": "ImageData 横幅設定",
+            "itemtype": "method",
+            "name": "setOriginalWidth",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "canvasWidth",
+                    "description": "canvasの横幅です。",
+                    "type": "Number"
+                }
+            ],
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/data/original.js",
+            "line": 94,
+            "description": "ImageData 縦幅設定",
+            "itemtype": "method",
+            "name": "setOriginalHeight",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "canvasHeight",
+                    "description": "canvasの横幅です。",
+                    "type": "Number"
+                }
+            ],
+            "class": "original",
+            "module": "Data"
+        },
+        {
+            "file": "src/filter/boundary.js",
+            "line": 13,
+            "description": "境界処理\n\n境界で近傍のピクセルがないときは対角のピクセルを処理します。そのためのカウンタを返します。\n境界処理は左上端, 左下端, 右上端, 右下端, 左端、右端、上端、下端で処理を分ける。",
+            "itemtype": "method",
+            "name": "expandedIndex",
+            "params": [
+                {
+                    "name": "k",
+                    "description": "注目ピクセルのRGBAのRed値インデックス",
+                    "type": "Number"
+                },
+                {
+                    "name": "i",
+                    "description": "空間フィルターの行方向カウンタ",
+                    "type": "Number"
+                },
+                {
+                    "name": "j",
+                    "description": "空間フィルターの列方向カウンタ",
+                    "type": "Number"
+                },
+                {
+                    "name": "{ImageData}",
+                    "description": "imageData canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "boundary",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/filters.js",
+            "line": 12,
+            "description": "線形フィルター",
+            "itemtype": "property",
+            "name": "linearFilter",
+            "access": "private",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "filters",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/filters.js",
+            "line": 21,
+            "description": "線形フィルター設定",
+            "itemtype": "method",
+            "name": "run",
+            "params": [
+                {
+                    "name": "filter",
+                    "description": "空間フィルターオブジェクトです。",
+                    "type": "Object"
+                }
+            ],
+            "class": "filters",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/filters.js",
+            "line": 31,
+            "description": "空間フィルター",
+            "itemtype": "property",
+            "name": "linearFilter",
+            "access": "private",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "filters",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/filters.js",
+            "line": 40,
+            "description": "空間フィルター設定",
+            "itemtype": "method",
+            "name": "run",
+            "params": [
+                {
+                    "name": "filter",
+                    "description": "空間フィルターオブジェクトです。",
+                    "type": "Object"
+                }
+            ],
+            "class": "filters",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/filters.js",
+            "line": 50,
+            "description": "フィルター処理",
+            "itemtype": "method",
+            "name": "run",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "filter name",
+                    "type": "String"
+                },
+                {
+                    "name": "k",
+                    "description": "ImageData.dataの処理rgbaのred値に対応するインデックス<br>",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を格納したオブジェクト。フィルターがないときはfalseを返す。",
+                "type": "Object | Boolean"
+            },
+            "class": "filters",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 13,
+            "description": "反転",
+            "itemtype": "method",
+            "name": "reverse",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 35,
+            "description": "2値画像",
+            "itemtype": "method",
+            "name": "mono",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 57,
+            "description": "グレースケール(単純平均)",
+            "itemtype": "method",
+            "name": "simpleGrayscale.",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 78,
+            "description": "グレースケール(NTSC系加重平均法)",
+            "itemtype": "method",
+            "name": "grayscale",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 99,
+            "description": "明るく",
+            "itemtype": "method",
+            "name": "bright",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3\n    alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 127,
+            "description": "sepia セピア",
+            "itemtype": "method",
+            "name": "filters.sepia.",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 153,
+            "description": "赤を増やす",
+            "itemtype": "method",
+            "name": "red",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 176,
+            "description": "グリーンを増やす",
+            "itemtype": "method",
+            "name": "green",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 199,
+            "description": "青を増やす",
+            "itemtype": "method",
+            "name": "blue",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + Red   i\n    + Green i + 1\n    + Blue  i + 2\n    + Alpha i + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 222,
+            "description": "フィルターの存在を確認",
+            "itemtype": "method",
+            "name": "is",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "フィルター名です。",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "フィルターがあればtrue、フィルターがないときはfalseを返します。",
+                "type": "Boolean"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 232,
+            "description": "フィルター呼び出し処理",
+            "itemtype": "method",
+            "name": "perform",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                },
+                {
+                    "name": "name",
+                    "description": "フィルター名です。",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/linearfilter.js",
+            "line": 245,
+            "description": "フィルター処理",
+            "itemtype": "method",
+            "name": "run",
+            "params": [
+                {
+                    "name": "i",
+                    "description": "画像データ(ImageData.data)のインデックスです。",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                },
+                {
+                    "name": "name",
+                    "description": "フィルター名です。",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "rgbaの値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "linearFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/processing.js",
+            "line": 12,
+            "description": "フィルターオブジェクト",
+            "itemtype": "property",
+            "name": "filter",
+            "access": "private",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "processing",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/processing.js",
+            "line": 21,
+            "description": "フィルター設定",
+            "itemtype": "method",
+            "name": "setFilter",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "filterオブジェクトです。",
+                    "type": "Object"
+                }
+            ],
+            "class": "processing",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/processing.js",
+            "line": 32,
+            "description": "フィルターを適用したデータを返す",
+            "itemtype": "method",
+            "name": "run",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "imageData",
+                    "description": "フィルター適用するImageDataです。",
+                    "type": "ImageData"
+                },
+                {
+                    "name": "name",
+                    "description": "適用するフィルター名です。",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "フィルター適用後のRGBA値を持つデータ配列です。",
+                "type": "Array"
+            },
+            "class": "processing",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/spatialfilter.js",
+            "line": 12,
+            "description": "境界処理",
+            "itemtype": "property",
+            "name": "boundary",
+            "access": "private",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "spatialFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/spatialfilter.js",
+            "line": 21,
+            "description": "境界処理設定",
+            "itemtype": "method",
+            "name": "setBoundary",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "target",
+                    "description": "境界判定オブジェクトです。",
+                    "type": "Object"
+                }
+            ],
+            "class": "spatialFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/spatialfilter.js",
+            "line": 32,
+            "description": "空間フィルターのオペレーター",
+            "itemtype": "property",
+            "name": "operator",
+            "access": "private",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "spatialFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/spatialfilter.js",
+            "line": 51,
+            "description": "空間フィルター",
+            "itemtype": "method",
+            "name": "filter",
+            "params": [
+                {
+                    "name": "k",
+                    "description": "画像データ(ImageData.data)のインデックスです。\n    + red   k 注目ピクセルのRed値に対応するImageData.dataのインデックス<br>\n    + green k + 1\n    + blue  k + 2\n    + alpha k + 3",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "name",
+                    "description": "フィルター名",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Object"
+            },
+            "class": "spatialFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/spatialfilter.js",
+            "line": 85,
+            "description": "フィルター存在確認",
+            "itemtype": "method",
+            "name": "is",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "フィルター名です。",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "フィルターがあればtrue、フィルターがないときはfalseを返します。",
+                "type": "Boolean"
+            },
+            "class": "spatialFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/filter/spatialfilter.js",
+            "line": 97,
+            "description": "フィルター実行",
+            "itemtype": "method",
+            "name": "run",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "フィルター名です。",
+                    "type": "String"
+                },
+                {
+                    "name": "i",
+                    "description": "ImageData.dataの処理。rgbaのred値に対応するインデックスです。",
+                    "type": "Number"
+                },
+                {
+                    "name": "imageData",
+                    "description": "canvasの描画情報を持つImageDataオブジェクトです。",
+                    "type": "ImageData"
+                }
+            ],
+            "return": {
+                "description": "rgba値を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "spatialFilter",
+            "module": "Filter"
+        },
+        {
+            "file": "src/lettering/lettering.js",
+            "line": 13,
+            "description": "テキストレイヤー非表示",
+            "itemtype": "method",
+            "name": "closeLayer",
+            "class": "lettering",
+            "module": "Lettering"
+        },
+        {
+            "file": "src/lettering/lettering.js",
+            "line": 27,
+            "description": "要素の親要素に対する相対な位置を取得",
+            "itemtype": "method",
+            "name": "getPosition",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "位置を算出する要素のjQueryオブジェクトです",
+                    "type": "JQuery"
+                }
+            ],
+            "return": {
+                "description": "親要素を基準にした相対位置を表すtopとleftを持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "lettering",
+            "module": "Lettering"
+        },
+        {
+            "file": "src/lettering/lettering.js",
+            "line": 40,
+            "description": "テキストをcanvasへ描画",
+            "itemtype": "method",
+            "name": "draw",
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "canvas要素です。",
+                    "type": "HTMLCanvasElement"
+                },
+                {
+                    "name": "letter",
+                    "description": "表示文字です。",
+                    "type": "String"
+                },
+                {
+                    "name": "pos",
+                    "description": "文字表示位置です。",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "top",
+                            "description": "上端です。",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "left",
+                            "description": "左端です。",
+                            "type": "Number"
+                        }
+                    ]
+                },
+                {
+                    "name": "color",
+                    "description": "文字色(HTML16進数カラー表記)です。",
+                    "type": "String"
+                },
+                {
+                    "name": "size",
+                    "description": "文字サイズです。",
+                    "type": "Number"
+                },
+                {
+                    "name": "family",
+                    "description": "フォントファミリーです。",
+                    "type": "Number"
+                }
+            ],
+            "class": "lettering",
+            "module": "Lettering"
+        },
+        {
+            "file": "src/transform/resize.js",
+            "line": 11,
+            "description": "リサイズ後の縦横を返す\n\nリサイズ後の値として横縦両方がしていされているときは横を優先し計算します。。",
+            "itemtype": "method",
+            "name": "getFixSize",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "imageData",
+                    "description": "画像のImageDataです。",
+                    "type": "ImageData"
+                },
+                {
+                    "name": "size",
+                    "description": "リサイズ後のサイズです。",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "width",
+                            "description": "リサイズ後の幅です。",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "height",
+                            "description": "リサイズ後の高さです。",
+                            "type": "Number"
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "リサイズ後の縦横を持つオブジェクトです。",
+                "type": "Object"
+            },
+            "class": "resize",
+            "module": "Transform"
+        },
+        {
+            "file": "src/transform/resize.js",
+            "line": 37,
+            "description": "画像を拡大・縮小し描画",
+            "itemtype": "method",
+            "name": "draw",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "処理対象のcanvasです。",
+                    "type": "HTMLCanvasElement"
+                },
+                {
+                    "name": "before",
+                    "description": "リサイズ前の縦・横です。",
+                    "type": "Object"
+                },
+                {
+                    "name": "after",
+                    "description": "リサイズ後の縦・横です。",
+                    "type": "Object"
+                }
+            ],
+            "class": "resize",
+            "module": "Transform"
+        },
+        {
+            "file": "src/transform/resize.js",
+            "line": 70,
+            "description": "入力検証",
+            "itemtype": "method",
+            "name": "validate",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "size",
+                    "description": "リサイズ後のサイズです。",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "width",
+                            "description": "リサイズ後の幅です。",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "height",
+                            "description": "リサイズ後の高さです。",
+                            "type": "Number"
+                        }
+                    ]
+                },
+                {
+                    "name": "ratio",
+                    "description": "縦横比固定にチェックがあればtrue, なければfalseです。",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "validation",
+                    "description": "入力検証オブジェクトです。",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "正しければtrue, 誤りがあればfalseを返します。",
+                "type": "Boolean"
+            },
+            "class": "resize",
+            "module": "Transform"
+        },
+        {
+            "file": "src/transform/resize.js",
+            "line": 98,
+            "description": "リサイズフィルタ実行",
+            "itemtype": "method",
+            "name": "run",
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "処理対象のcanvasです。",
+                    "type": "HTMLCanvasElement"
+                },
+                {
+                    "name": "size",
+                    "description": "key/value。",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "width",
+                            "description": "リサイズ後の幅です。",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "height",
+                            "description": "リサイズ後の高さです。",
+                            "type": "Number"
+                        }
+                    ]
+                },
+                {
+                    "name": "ratio",
+                    "description": "縦横比固定フラグです。",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "処理を失敗したときはfalseを返します。",
+                "type": "Boolean"
+            },
+            "class": "resize",
+            "module": "Transform"
+        },
+        {
+            "file": "src/transform/rotate.js",
+            "line": 12,
+            "description": "回転",
+            "itemtype": "method",
+            "name": "rotate",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "angle",
+                    "description": "度数",
+                    "type": "Number"
+                },
+                {
+                    "name": "canvas",
+                    "description": "canvas要素です。",
+                    "type": "HTMLCanvasElement"
+                },
+                {
+                    "name": "img",
+                    "description": "img要素オブジェクトです。",
+                    "type": "HtmlImageElement"
+                }
+            ],
+            "class": "rotate",
+            "module": "Transform"
+        },
+        {
+            "file": "src/trim/trim.js",
+            "line": 8,
+            "description": "選択範囲表示",
+            "itemtype": "method",
+            "name": "openSelection",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "選択範囲オブジェクトです。",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "trim",
+            "module": "Trim"
+        },
+        {
+            "file": "src/trim/trim.js",
+            "line": 22,
+            "description": "選択範囲削除",
+            "itemtype": "method",
+            "name": "closeSelection",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "選択範囲オブジェクトです。",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "trim",
+            "module": "Trim"
+        },
+        {
+            "file": "src/trim/trim.js",
+            "line": 33,
+            "description": "選択範囲変更",
+            "itemtype": "method",
+            "name": "resizeSelection",
+            "params": [
+                {
+                    "name": "rect",
+                    "description": "トリミング範囲オブジェクトです。",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "rectWidth",
+                    "description": "トリミング範囲 横設定input要素です。",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "rectHeight",
+                    "description": "トリミング範囲 縦設定input要素です。",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "trim",
+            "module": "Trim"
+        },
+        {
+            "file": "src/trim/trim.js",
+            "line": 49,
+            "description": "トリムエリア横幅設定",
+            "itemtype": "method",
+            "name": "setWidth",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "トリミング範囲 横設定input要素です。",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "rect",
+                    "description": "トリミング範囲オブジェクトです。",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "trim",
+            "module": "Trim"
+        },
+        {
+            "file": "src/trim/trim.js",
+            "line": 75,
+            "description": "トリムエリア縦幅設定",
+            "itemtype": "method",
+            "name": "setHeight",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "elem",
+                    "description": "トリミング範囲 縦設定input要素です。",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "rect",
+                    "description": "トリミング範囲オブジェクトです。",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "trim",
+            "module": "Trim"
+        },
+        {
+            "file": "src/trim/trim.js",
+            "line": 102,
+            "description": "トリミング",
+            "itemtype": "method",
+            "name": "run",
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "canvas要素です。",
+                    "type": "HTMLCanvasElement"
+                },
+                {
+                    "name": "selection",
+                    "description": "選択範囲オブジェクトです。",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "parent",
+                    "description": "選択範囲オブジェクトの親オブジェクトです。",
+                    "type": "JQuery"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "trim",
+            "module": "Trim"
+        },
+        {
+            "file": "src/uploader/uploader.js",
+            "line": 8,
+            "description": "オリジナル画像情報",
+            "itemtype": "property",
+            "name": "original",
+            "access": "private",
+            "tagname": "",
+            "type": "{Object}",
+            "class": "uploader",
+            "module": "Uploader"
+        },
+        {
+            "file": "src/uploader/uploader.js",
+            "line": 21,
+            "description": "圧縮方式検証\n\npng, jpegならばtrue。対応していないタイプならばアラートを表示してfalseを返します。",
+            "itemtype": "method",
+            "name": "checkFormat",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "format",
+                    "description": "画像フォーマット",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "uploader",
+            "module": "Uploader"
+        },
+        {
+            "file": "src/uploader/uploader.js",
+            "line": 42,
+            "description": "img要素画像データーをcanvasへ描画",
+            "itemtype": "method",
+            "name": "imgToCanvas",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "img",
+                    "description": "canvasへ描画するimg要素です。",
+                    "type": "HTMLImgElement"
+                },
+                {
+                    "name": "canvas",
+                    "description": "canvas要素です。",
+                    "type": "HTMLCanvasElement"
+                }
+            ],
+            "class": "uploader",
+            "module": "Uploader"
+        },
+        {
+            "file": "src/uploader/uploader.js",
+            "line": 71,
+            "description": "画像読込",
+            "itemtype": "method",
+            "name": "readFile",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "reader",
+                    "description": "FileReaderオブエジェクトです。",
+                    "type": "Object"
+                },
+                {
+                    "name": "canvas",
+                    "description": "canvas要素です。",
+                    "type": "HTMLCanvasElement"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Function"
+            },
+            "class": "uploader",
+            "module": "Uploader"
+        },
+        {
+            "file": "src/uploader/uploader.js",
+            "line": 89,
+            "description": "画像描画",
+            "itemtype": "method",
+            "name": "drawFile",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "file",
+                    "description": "アップロードする画像です。",
+                    "type": "Object"
+                },
+                {
+                    "name": "canvas",
+                    "description": "canvas要素です。",
+                    "type": "HTMLCanvasElement"
+                }
+            ],
+            "class": "uploader",
+            "module": "Uploader"
+        },
+        {
+            "file": "src/uploader/uploader.js",
+            "line": 104,
+            "description": "ドラッグアンドドロップ処理",
+            "itemtype": "method",
+            "name": "setDragDrop",
+            "access": "public",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "canvas要素です。",
+                    "type": "HTMLCanvasElement"
+                }
+            ],
+            "class": "uploader",
+            "module": "Uploader"
+        },
+        {
+            "file": "src/validation/validation.js",
+            "line": 9,
+            "description": "undefined, null, 空文字''のときはfalse。",
+            "params": [
+                {
+                    "name": "values",
+                    "description": "スカラー値または配列です。\n引数なしで呼び出されたときはfalseを返す。\nネストは考慮しない。"
+                }
+            ],
+            "class": "validation",
+            "module": "Validation"
+        },
+        {
+            "file": "src/validation/validation.js",
+            "line": 43,
+            "description": "0より大きい整数",
+            "params": [
+                {
+                    "name": "num\n0より大きい整数true。それ以外はfalseを返します。\n引数なしで呼び出したときはfalse",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "validation",
+            "module": "Validation"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nundefined, null, 空文字''のときはfalse。",
+            "line": " src/validation/validation.js:9"
+        },
+        {
+            "message": "Missing item type\n0より大きい整数",
+            "line": " src/validation/validation.js:43"
+        }
+    ]
+}

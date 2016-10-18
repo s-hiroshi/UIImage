@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src/filter/linearfilter.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/boundary.html">boundary</a></li>
+                                <li><a href="../classes/filters.html">filters</a></li>
+                                <li><a href="../classes/lettering.html">lettering</a></li>
+                                <li><a href="../classes/linearFilter.html">linearFilter</a></li>
+                                <li><a href="../classes/original.html">original</a></li>
+                                <li><a href="../classes/processing.html">processing</a></li>
+                                <li><a href="../classes/resize.html">resize</a></li>
+                                <li><a href="../classes/rotate.html">rotate</a></li>
+                                <li><a href="../classes/spatialFilter.html">spatialFilter</a></li>
+                                <li><a href="../classes/trim.html">trim</a></li>
+                                <li><a href="../classes/uploader.html">uploader</a></li>
+                                <li><a href="../classes/validation.html">validation</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/Data.html">Data</a></li>
+                                <li><a href="../modules/Filter.html">Filter</a></li>
+                                <li><a href="../modules/Lettering.html">Lettering</a></li>
+                                <li><a href="../modules/Transform.html">Transform</a></li>
+                                <li><a href="../modules/Trim.html">Trim</a></li>
+                                <li><a href="../modules/Uploader.html">Uploader</a></li>
+                                <li><a href="../modules/Validation.html">Validation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: src/filter/linearfilter.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * フィルター
+ *
+ * @module Filter
+ */
+/**
+ * 線形フィルター
+ *
+ * @class linearFilter
+ */
+export default (function () {
+    const filters = {};
+    /**
+     * 反転
+     *
+     * @method reverse
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;reverse&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        rgba.r = 255 - imageData.data[i];
+        rgba.g = 255 - imageData.data[i + 1];
+        rgba.b = 255 - imageData.data[i + 2];
+        rgba.a = imageData.data[i + 3];
+        return rgba;
+    };
+
+    /**
+     * 2値画像
+     *
+     * @method mono
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;mono&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        var color = parseInt( (imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3, 10 );
+        color = (color &lt; 128) ? 0 : 255;
+        rgba.r = rgba.g = rgba.b = color;
+        rgba.a = imageData.data[i + 3];
+        return rgba;
+    };
+
+    /**
+     * グレースケール(単純平均)
+     *
+     * @method simpleGrayscale.
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;simpleGrayscale&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        var average = parseInt( (imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3, 10 );
+        rgba.r = rgba.g = rgba.b = average;
+        rgba.a = imageData.data[i + 3];
+        return rgba;
+    };
+
+    /**
+     * グレースケール(NTSC系加重平均法)
+     *
+     * @method grayscale
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;grayscale&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        var color = parseInt( (imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3, 10 );
+        rgba.r = rgba.g = rgba.b = color;
+        rgba.a = imageData.data[i + 3];
+        return rgba;
+    };
+
+    /**
+     * 明るく
+     *
+     * @method bright
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     *     alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;bright&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        var inc = 4;
+        rgba.r = ((imageData.data[i] + inc) &lt; 255) ? imageData.data[i] + inc : 255;
+        /* Red */
+        rgba.g = ((imageData.data[i + 1] + inc) &lt; 255) ? imageData.data[i + 1] + inc : 255;
+        /* Green */
+        rgba.b = ((imageData.data[i + 2] + inc) &lt; 255) ? imageData.data[i + 2] + inc : 255;
+        /* Blue */
+        rgba.a = imageData.data[i + 3];
+        /* alpha */
+        return rgba;
+    };
+
+    /**
+     * sepia セピア
+     *
+     * @method filters.sepia.
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;sepia&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        // グレースケールへ
+        var average = parseInt( imageData.data[i] * 0.298912 + imageData.data[i + 1] * 0.586611 + imageData.data[i + 2] * 0.114478, 10 );
+        rgba.r = rgba.g = rgba.b = average;
+        rgba.a = imageData.data[i + 3];
+        // セピアへ
+        rgba.r *= 0.9;
+        rgba.g *= 0.7;
+        rgba.b *= 0.4;
+        return rgba;
+    };
+
+    /**
+     * 赤を増やす
+     *
+     * @method red
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;red&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        rgba.r = imageData.data[i];
+        rgba.r = (rgba.r &lt; 250) ? rgba.r + 5 : 255;
+        rgba.g = imageData.data[i + 1];
+        rgba.b = imageData.data[i + 2];
+        rgba.a = imageData.data[i + 3];
+        return rgba;
+    };
+
+    /**
+     * グリーンを増やす
+     *
+     * @method green
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;green&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        rgba.r = imageData.data[i];
+        rgba.g = imageData.data[i + 1];
+        rgba.g = (rgba.g &lt; 250) ? rgba.g + 5 : 255;
+        rgba.b = imageData.data[i + 2];
+        rgba.a = imageData.data[i + 3];
+        return rgba;
+    };
+
+    /**
+     * 青を増やす
+     *
+     * @method blue
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     *     + Red   i
+     *     + Green i + 1
+     *     + Blue  i + 2
+     *     + Alpha i + 3
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    filters[&#x27;blue&#x27;] = function ( i, imageData ) {
+        var rgba = {};
+        rgba.r = imageData.data[i];
+        rgba.g = imageData.data[i + 1];
+        rgba.b = imageData.data[i + 2];
+        rgba.b = (rgba.b &lt; 250) ? rgba.b + 5 : 255;
+        rgba.a = imageData.data[i + 3];
+        return rgba;
+    };
+
+    /**
+     * フィルターの存在を確認
+     * @method is
+     * @param {String} name フィルター名です。
+     * @return {Boolean} フィルターがあればtrue、フィルターがないときはfalseを返します。
+     */
+    function is( name ) {
+        return typeof filters[name] === &#x27;function&#x27;;
+    }
+
+    /**
+     * フィルター呼び出し処理
+     * @method perform
+     * @private
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @param {String} name フィルター名です。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    function perform( i, imageData, name ) {
+        return filters[name]( i, imageData );
+    }
+
+    /**
+     * フィルター処理
+     *
+     * @method run
+     * @param {Number} i 画像データ(ImageData.data)のインデックスです。
+     * @param {ImageData} imageData canvasの描画情報を持つImageDataオブジェクトです。
+     * @param {String} name フィルター名です。
+     * @return {Object} rgbaの値を持つオブジェクトです。
+     */
+    function run( i, imageData, name ) {
+        return perform( i, imageData, name );
+    }
+
+    return {
+        is: is,
+        run: run
+    };
+}());
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
