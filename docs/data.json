@@ -523,7 +523,7 @@
         {
             "file": "src/data/original.js",
             "line": 94,
-            "description": "ImageData 縦幅設定",
+            "description": "ImageData 高さ設定",
             "itemtype": "method",
             "name": "setOriginalHeight",
             "access": "public",
@@ -531,7 +531,7 @@
             "params": [
                 {
                     "name": "canvasHeight",
-                    "description": "canvasの横幅です。",
+                    "description": "canvasの高さです。",
                     "type": "Number"
                 }
             ],

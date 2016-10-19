@@ -833,11 +833,11 @@ exports.default = function () {
   }
 
   /**
-   * ImageData 縦幅設定
+   * ImageData 高さ設定
    *
    * @method setOriginalHeight
    * @public
-   * @param {Number} canvasHeight canvasの横幅です。
+   * @param {Number} canvasHeight canvasの高さです。
    */
   function setOriginalHeight(canvasHeight) {
     heightElem.val(canvasHeight);
