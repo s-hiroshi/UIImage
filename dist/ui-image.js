@@ -975,6 +975,10 @@ var _trim = require('./trim/trim.js');
 
 var _trim2 = _interopRequireDefault(_trim);
 
+var _circle = require('./trim/circle.js');
+
+var _circle2 = _interopRequireDefault(_circle);
+
 var _lettering = require('./lettering/lettering.js');
 
 var _lettering2 = _interopRequireDefault(_lettering);
@@ -1088,6 +1092,10 @@ $('#trimming').on('click', function () {
     return false;
 });
 
+$('#trimming-circle').on('click', function () {
+    _circle2.default.run(canvas);
+});
+
 /*
  * 文字入力
  */
@@ -1123,7 +1131,7 @@ $('#save').on('click', function () {
     img.get(0).setAttribute('src', canvasData);
 });
 
-},{"./Filter/boundary.js":1,"./Filter/filters.js":2,"./Filter/linearfilter.js":3,"./Filter/spatialfilter.js":4,"./data/original.js":5,"./filter/processing.js":6,"./lettering/lettering.js":8,"./transform/resize.js":9,"./transform/rotate.js":10,"./trim/trim.js":11,"./uploader/uploader.js":12,"./validation/validation.js":13}],8:[function(require,module,exports){
+},{"./Filter/boundary.js":1,"./Filter/filters.js":2,"./Filter/linearfilter.js":3,"./Filter/spatialfilter.js":4,"./data/original.js":5,"./filter/processing.js":6,"./lettering/lettering.js":8,"./transform/resize.js":9,"./transform/rotate.js":10,"./trim/circle.js":11,"./trim/trim.js":12,"./uploader/uploader.js":13,"./validation/validation.js":14}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1408,6 +1416,157 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 /**
+ * 円形トリミング
+ *
+ * @module Trim
+ * @class circle
+ */
+exports.default = function () {
+    /**
+     * 選択範囲表示
+     *
+     * @method openSelection
+     * @public
+     * @param {jQuery} elem 選択範囲オブジェクトです。
+     */
+    function openSelection(elem) {
+        var selection = elem instanceof jQuery ? elem : $(elem);
+        selection.resizable();
+        selection.draggable();
+        selection.css({ 'display': 'block' });
+    }
+
+    /**
+     * 選択範囲削除
+     *
+     * @method closeSelection
+     * @param {jQuery} elem 選択範囲オブジェクトです。
+     */
+    function closeSelection(elem) {
+        var selection = elem instanceof jQuery ? elem : $(elem);
+        selection.css('display', 'none');
+    }
+
+    /**
+     * 選択範囲変更
+     *
+     * @method resizeSelection
+     * @param {jQuery} rect トリミング範囲オブジェクトです。
+     * @param {jQuery} rectWidth トリミング範囲 横設定input要素です。
+     * @param {jQuery} rectHeight トリミング範囲 縦設定input要素です。
+     */
+    function resizeSelection(rect, rectWidth, rectHeight) {
+        rect = rect instanceof jQuery ? rect : $(rect);
+        rectWidth = rectWidth instanceof jQuery ? rectWidth : $(rectWidth);
+        rectHeight = rectHeight instanceof jQuery ? rectHeight : $(rectHeight);
+        rectWidth.val(rect.width());
+        rectHeight.val(rect.height());
+    }
+
+    /**
+     * トリムエリア横幅設定
+     *
+     * @method setWidth
+     * @public
+     * @param {jQuery} elem トリミング範囲 横設定input要素です。
+     * @param {jQuery} rect トリミング範囲オブジェクトです。
+     */
+    function setWidth(elem, rect) {
+        elem = elem instanceof jQuery ? elem : $(elem);
+        rect = rect instanceof jQuery ? rect : $(rect);
+        if (elem.val() === '') {
+            return false;
+        }
+        var width = parseInt(elem.val(), 10);
+        // キャスト(キャストできないときはエラーではなくNaNを返します)
+        if (isNaN(width)) {
+            alert('数字を入力してください。');
+        }
+        if (width > 0 === false) {
+            alert('0より大きい整数を入力してください。');
+            return false;
+        }
+        rect.css('width', width + 'px');
+    }
+
+    /**
+     * トリムエリア縦幅設定
+     *
+     * @method setHeight
+     * @public
+     * @param {jQuery} elem トリミング範囲 縦設定input要素です。
+     * @param {jQuery} rect トリミング範囲オブジェクトです。
+     */
+    function setHeight(elem, rect) {
+        elem = elem instanceof jQuery ? elem : $(elem);
+        rect = rect instanceof jQuery ? rect : $(rect);
+        if (elem.val() === '') {
+            return false;
+        }
+        /* キャスト(キャストできないときはエラーではなくNaNを返します) */
+        var height = parseInt(elem.val(), 10);
+        if (isNaN(height)) {
+            alert('数字を入力してください。');
+        }
+        /* 0より大きい数字以外はアラート */
+        if (height > 0 === false) {
+            alert('0より大きい数字を入力してください。');
+            return false;
+        }
+        rect.css('height', height + 'px');
+    }
+
+    /**
+     * トリミング
+     *
+     * @method run
+     * @param {HTMLCanvasElement} canvas canvas要素です。
+     * @return {Function}
+     */
+    function run(canvas, selection) {
+        var ctx = canvas.getContext('2d');
+
+        var bufferCanvas = document.createElement('canvas');
+        var bufferCtx = bufferCanvas.getContext('2d');
+        bufferCtx.drawImage(canvas, 0, 0);
+
+        ctx.beginPath();
+        ctx.rect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "rgb(255,255,255)";
+        ctx.fill();
+
+        var x = canvas.width / 2;
+        var y = canvas.height / 2;
+        var radius = x - y >= 0 ? x / 2 : y / 2;
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
+        ctx.clip();
+        /* ImageDataによる下記処理では正しくクリッピングできません。
+         * 代わりにbufferCanvasを作成しdrawImageで描画しています。
+         * const data = ctx.getImageData( 0, 0, canvas.width, canvas.height);
+         * ctx.putImageData( data, 0, 0 );
+         */
+        ctx.drawImage(bufferCanvas, 0, 0);
+    }
+
+    return {
+        openSelection: openSelection,
+        closeSelection: closeSelection,
+        resizeSelection: resizeSelection,
+        setWidth: setWidth,
+        setHeight: setHeight,
+        run: run
+    };
+}();
+
+},{}],12:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+/**
  * トリミング
  *
  * @module Trim
@@ -1543,7 +1702,7 @@ exports.default = function () {
     };
 }();
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1687,7 +1846,7 @@ exports.default = function () {
     };
 }();
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

@@ -19,6 +19,7 @@ filters.setSpatialFilter( spatialFilter );
 import processing from './filter/processing.js';
 processing.setFilter( filters );
 import trim from './trim/trim.js';
+import trimCircle from './trim/circle.js';
 import lettering from './lettering/lettering.js';
 
 /*
@@ -110,6 +111,11 @@ $( '#trimming' ).on( 'click', function () {
     trim.run( canvas, $( "#trim-selection" ) );
     return false;
 } );
+
+$('#trimming-circle').on('click', function() {
+    trimCircle.run(canvas);
+    
+});
 
 /*
  * 文字入力
