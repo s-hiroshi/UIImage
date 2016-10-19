@@ -1,15 +1,33 @@
 @charset "utf-8";
 body {
+  border-top: 3px solid #0088CC;
+  color: #546E7A;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.65;
+  letter-spacing: .1em;
 }
 
 h1 {
   color: #0088CC;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 1.875rem 0 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 1.875rem 0 1.5rem;
 }
 
 #header {
-  margin-bottom: 2em;
+  padding: 2rem 0;
+  
 }
 
 .uploader-wrapper {

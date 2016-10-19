@@ -32,7 +32,7 @@ export default (function () {
         if ( format.match( /^image\/(png|jpeg)$/ ) === null ) {
             alert( 
                 `対応していないファイル形式です。
-                PNGまたはjPGファイルを選択してください。` 
+                PNGまたはJPGファイルを選択してください。` 
             );
             return false;
         }

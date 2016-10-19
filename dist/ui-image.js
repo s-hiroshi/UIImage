@@ -931,82 +931,6 @@ exports.default = function () {
 },{}],7:[function(require,module,exports){
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-/**
- * 文字入力
- *
- * @module Lettering
- * @class lettering
- */
-exports.default = function () {
-
-    function syncText(input, output) {}
-    /* %TODO: 文字レイヤー(ドラッグ可能なDOM)を実装したときにレイヤーの文字を描画(同期)する処理 */
-
-
-    /**
-     * テキストレイヤー非表示
-     *
-     * @method closeLayer
-     */
-    function closeLayer() {
-        if (typeof textOutput !== 'undefined') {
-            $(textOutput).remove();
-        }
-        if (typeof textTool !== 'undefined') {
-            $(textTool).remove();
-        }
-    }
-
-    /**
-     * 要素の親要素に対する相対な位置を取得
-     *
-     * @method getPosition
-     * @public
-     * @param {jQuery} elem 位置を算出する要素のjQueryオブジェクトです
-     * @return {Object} 親要素を基準にした相対位置を表すtopとleftを持つオブジェクトです。
-     */
-    function getPosition(elem) {
-        elem = elem instanceof jQuery ? elem : $(elem);
-        return elem.position();
-    }
-
-    /**
-     * テキストをcanvasへ描画
-     *
-     * @method draw
-     * @param {HTMLCanvasElement} canvas canvas要素です。
-     * @param {String} letter 表示文字です。
-     * @param {Object} pos 文字表示位置です。
-     * @param {Number} pos.top 上端です。
-     * @param {Number} pos.left 左端です。
-     * @param {String} color 文字色(HTML16進数カラー表記)です。
-     * @param {Number} size 文字サイズです。
-     * @param {Number} family フォントファミリーです。
-     */
-    function draw(canvas, letter, pos, color, size, family) {
-        var ctx = canvas.getContext('2d');
-        if (letter === '') {
-            return false;
-        }
-        ctx.font = size + 'px ' + family;
-        ctx.fillStyle = "#" + color;
-        ctx.fillText(letter, pos.left, pos.top);
-        return false;
-    }
-
-    return {
-        getPosition: getPosition,
-        draw: draw
-    };
-}();
-
-},{}],8:[function(require,module,exports){
-'use strict';
-
 var _original = require('./data/original.js');
 
 var _original2 = _interopRequireDefault(_original);
@@ -1080,7 +1004,7 @@ _processing2.default.setFilter(_filters2.default);
 $('#uploader').bind('change', function () {
     var file = this.files[0];
     if (_uploader2.default.checkFormat(file.type) === false) {
-        alert('対応していないファイル形式です。\nファイルはPNG, JPEG, GIFに対応しています。');
+        return false;
     }
     _uploader2.default.drawFile(file, canvas);
 });
@@ -1199,7 +1123,83 @@ $('#save').on('click', function () {
     img.get(0).setAttribute('src', canvasData);
 });
 
-},{"./Filter/boundary.js":1,"./Filter/filters.js":2,"./Filter/linearfilter.js":3,"./Filter/spatialfilter.js":4,"./data/original.js":5,"./filter/processing.js":6,"./lettering/lettering.js":7,"./transform/resize.js":9,"./transform/rotate.js":10,"./trim/trim.js":11,"./uploader/uploader.js":12,"./validation/validation.js":13}],9:[function(require,module,exports){
+},{"./Filter/boundary.js":1,"./Filter/filters.js":2,"./Filter/linearfilter.js":3,"./Filter/spatialfilter.js":4,"./data/original.js":5,"./filter/processing.js":6,"./lettering/lettering.js":8,"./transform/resize.js":9,"./transform/rotate.js":10,"./trim/trim.js":11,"./uploader/uploader.js":12,"./validation/validation.js":13}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+/**
+ * 文字入力
+ *
+ * @module Lettering
+ * @class lettering
+ */
+exports.default = function () {
+
+    function syncText(input, output) {}
+    /* %TODO: 文字レイヤー(ドラッグ可能なDOM)を実装したときにレイヤーの文字を描画(同期)する処理 */
+
+
+    /**
+     * テキストレイヤー非表示
+     *
+     * @method closeLayer
+     */
+    function closeLayer() {
+        if (typeof textOutput !== 'undefined') {
+            $(textOutput).remove();
+        }
+        if (typeof textTool !== 'undefined') {
+            $(textTool).remove();
+        }
+    }
+
+    /**
+     * 要素の親要素に対する相対な位置を取得
+     *
+     * @method getPosition
+     * @public
+     * @param {jQuery} elem 位置を算出する要素のjQueryオブジェクトです
+     * @return {Object} 親要素を基準にした相対位置を表すtopとleftを持つオブジェクトです。
+     */
+    function getPosition(elem) {
+        elem = elem instanceof jQuery ? elem : $(elem);
+        return elem.position();
+    }
+
+    /**
+     * テキストをcanvasへ描画
+     *
+     * @method draw
+     * @param {HTMLCanvasElement} canvas canvas要素です。
+     * @param {String} letter 表示文字です。
+     * @param {Object} pos 文字表示位置です。
+     * @param {Number} pos.top 上端です。
+     * @param {Number} pos.left 左端です。
+     * @param {String} color 文字色(HTML16進数カラー表記)です。
+     * @param {Number} size 文字サイズです。
+     * @param {Number} family フォントファミリーです。
+     */
+    function draw(canvas, letter, pos, color, size, family) {
+        var ctx = canvas.getContext('2d');
+        if (letter === '') {
+            return false;
+        }
+        ctx.font = size + 'px ' + family;
+        ctx.fillStyle = "#" + color;
+        ctx.fillText(letter, pos.left, pos.top);
+        return false;
+    }
+
+    return {
+        getPosition: getPosition,
+        draw: draw
+    };
+}();
+
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1582,7 +1582,7 @@ exports.default = function () {
      */
     function checkFormat(format) {
         if (format.match(/^image\/(png|jpeg)$/) === null) {
-            alert('\u5BFE\u5FDC\u3057\u3066\u3044\u306A\u3044\u30D5\u30A1\u30A4\u30EB\u5F62\u5F0F\u3067\u3059\u3002\n                PNG\u307E\u305F\u306FjPG\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002');
+            alert('\u5BFE\u5FDC\u3057\u3066\u3044\u306A\u3044\u30D5\u30A1\u30A4\u30EB\u5F62\u5F0F\u3067\u3059\u3002\n                PNG\u307E\u305F\u306FJPG\u30D5\u30A1\u30A4\u30EB\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002');
             return false;
         }
         return true;
@@ -1764,4 +1764,4 @@ exports.default = function () {
     };
 }();
 
-},{}]},{},[8]);
+},{}]},{},[7]);

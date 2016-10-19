@@ -187,7 +187,7 @@ export default (function () {
             return false;
         }
         /* キャスト(キャストできないときはエラーではなくNaNを返します) */
-        const height = parseInt( $( input ).val(), 10 );
+        const height = parseInt( elem.val(), 10 );
         if ( isNaN( height ) ) {
             alert( &#x27;数字を入力してください。&#x27; );
         }

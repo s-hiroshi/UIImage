@@ -27,7 +27,7 @@ import lettering from './lettering/lettering.js';
 $( '#uploader' ).bind( 'change', function () {
     const file = this.files[0];
     if ( uploader.checkFormat( file.type ) === false ) {
-        alert( '対応していないファイル形式です。\nファイルはPNG, JPEG, GIFに対応しています。' );
+        return false;
     }
     uploader.drawFile( file, canvas );
 } );

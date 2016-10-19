@@ -1,15 +1,15 @@
 {
   "name": "ui-image",
   "version": "0.1.0",
-  "description": "This program provides JavaScript image processing.",
-  "main": "main.js",
+  "description": "This program provides JavaScript image processing of HTML canvas.",
+  "main": "./src/index.js",
   "directories": {
     "doc": "docs",
     "example": "examples"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "watchify -v -t babelify src/main.js -o dist/ui-image.js",
+    "watch": "watchify -v -t babelify src/index.js -o dist/ui-image.js",
     "min": "uglifyjs ./dist/ui-image.js -o ./dist/ui-image.min.js",
     "docs": "yuidoc -o ./docs ./src"
   },
