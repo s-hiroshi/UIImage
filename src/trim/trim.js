@@ -105,7 +105,6 @@ export default (function () {
      * @method run
      * @param {HTMLCanvasElement} canvas canvas要素です。
      * @param {jQuery} selection 選択範囲オブジェクトです。
-     * @param {jQuery} parent 選択範囲オブジェクトの親オブジェクトです。
      * @return {Function}
      */
     function run( canvas, selection) {
@@ -132,6 +131,5 @@ export default (function () {
         setHeight: setHeight,
         run: run
     }
-
 }());
 
