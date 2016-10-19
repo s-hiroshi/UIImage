@@ -8,11 +8,10 @@ This software provides JavaScript image processing of HTML canvas.
 * jQuery UI - v1.12.0
 * Bootstrap v4.0.0
 
+## Scripts implementation
 
-## Implementation
-
-Scripts is module pattern.  
-Define 1 object in 1 file.
+Scripts take module pattern.  
+Define one object in one file.
 
 ### Example
 
@@ -36,7 +35,7 @@ example.js
 
 ### Use object
 
-src/main.js
+src/index.js
 
     inport example from 'example.js';
 
@@ -46,8 +45,7 @@ src/main.js
 
 You install npm packages topmost project directory.
 
-1. Install Babel, Browserify in order to compile ES2015 and use ES Modules.
-2. Install Mocha, etc in order to Unit Test.
+* Install Babel, Browserify in order to compile ES2015 and use ES Modules.
 
 
 ```
@@ -59,20 +57,17 @@ You watch src directory in order to compile ES2015 by Babel and Browserify.
 
     $ npm run watch
 
-You can do tests.
-
-    $npm run test
 
 ### Install npm package to global if you need.
 
-If you minify JavaScript, install bellow package to global.
+If you minify JavaScript, You install bellow package to global.
 
 [mishoo/UglifyJS2: JavaScript parser / mangler / compressor / beautifier toolkit](https://github.com/mishoo/UglifyJS2)
 
     $ cd /path/to/project
     $ uglifyjs ./dist/ui-image.js -o ./dist/ui-image.min.js
 
-If you generate JavaScript documentation, install bellow package to global.
+If you generate JavaScript documentation, You install bellow package to global.
  
 [YUIDoc - JavaScript Documentation Tool](http://yui.github.io/yuidoc/)
 
@@ -81,7 +76,8 @@ If you generate JavaScript documentation, install bellow package to global.
 
 ### Task runner(Npm scripts)
 
-This project uses npm scripts. npm script is written in package.json
+This project uses npm scripts.  
+npm script is written in package.json
 
 Watch files and compile by Babel and Browefiry.
 
