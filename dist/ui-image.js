@@ -1003,7 +1003,7 @@ _processing2.default.setFilter(_filters2.default);
 
 
 /*
- * 画像アップロード
+ * 画像のアップロード
  */
 $('#uploader').bind('change', function () {
     var file = this.files[0];

@@ -23,7 +23,7 @@ import trimCircle from './trim/circle.js';
 import lettering from './lettering/lettering.js';
 
 /*
- * 画像アップロード
+ * 画像のアップロード
  */
 $( '#uploader' ).bind( 'change', function () {
     const file = this.files[0];
@@ -34,7 +34,7 @@ $( '#uploader' ).bind( 'change', function () {
 } );
 
 /*
- * オリジナル画像表示
+ * オリジナル表示
  */
 $( '#original' ).on( 'click', function () {
     let originalData = original.getOriginalData();
