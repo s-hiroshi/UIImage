@@ -34,7 +34,7 @@ $( '#uploader' ).bind( 'change', function () {
 } );
 
 /*
- * オリジナル表示
+ * オリジナル画像表示
  */
 $( '#original' ).on( 'click', function () {
     let originalData = original.getOriginalData();

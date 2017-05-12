@@ -11,7 +11,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "watchify -v -t babelify src/index.js -o dist/ui-image.js",
     "min": "uglifyjs ./dist/ui-image.js -o ./dist/ui-image.min.js",
-    "docs": "yuidoc -o ./docs ./src"
+    "docs": "yuidoc -o ./docs ./src",
+    "prbuild": "browserify ./src/index.js -t babelify --outfile ./dist/ui-image.js",
+    "build": "uglifyjs ./dist/ui-image.js -o ./dist/ui-image.min.js"
   },
   "keywords": [
     "JavaScript"

@@ -37,7 +37,7 @@ example.js
 
 src/index.js
 
-    inport example from 'example.js';
+    import example from 'example.js';
 
 ## Develop environment
 
@@ -47,7 +47,6 @@ You install npm packages topmost project directory.
 
 * Install Babel, Browserify in order to compile ES2015 and use ES Modules.
 
-
 ```
 $ cd /path/to/project
 $ npm install
@@ -56,7 +55,6 @@ $ npm install
 You watch src directory in order to compile ES2015 by Babel and Browserify.
 
     $ npm run watch
-
 
 ### Install npm package to global if you need.
 
@@ -93,6 +91,11 @@ Generate JavaScript documentation(YUIDoc).
 
     $ cd /path/to/project
     $ npm run docs
+
+Build distribution file (dist/ui-image.min.js).
+
+    $ cd /path/to/project
+    $ npm run build
 
 
 ## LICENSE
